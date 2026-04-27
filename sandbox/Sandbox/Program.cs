@@ -12,10 +12,17 @@ class Program
         {
             Console.WriteLine("Hey bob");
         }
-        
+
         for (int i = 0; i < 10; i++)
         {
             Console.WriteLine(i);
+        }
+
+        int age = -2;
+        while (age < 0 || age > 125)
+        {
+            Console.WriteLine("Enter your age");
+            age = int.Parse(Console.ReadLine());
         }
 
     }
