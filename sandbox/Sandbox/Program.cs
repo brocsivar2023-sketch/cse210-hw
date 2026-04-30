@@ -7,9 +7,20 @@ class Program
     {
         Console.WriteLine("Hello Betty");
     }
+
+    static double AddNumbers(int n1, int n2, double n3)
+    {
+        double total = n1 + n2 + n3;
+        return total;
+    }
+
+
+
     static void Main(string[] args)
     {
         DisplayGreeting();
+        double total = AddNumbers(10, 20, 1001.234);
+        Console.WriteLine(total);
     //     // I'm an amazing man
     //     // and goodlooking too ;)
     //     Console.WriteLine("Hello Sandbox World!");
