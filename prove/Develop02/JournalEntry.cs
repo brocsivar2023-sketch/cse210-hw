@@ -3,6 +3,8 @@ public class JournalEntry
     public string _date;
     public string _prompt;
     public string _response;
+    
+    //Need to create more prompts 
     public string[] _prompts =
     {
         "How are you feeling today?",
@@ -12,6 +14,7 @@ public class JournalEntry
 
     public void CreateJournalEntry()
     {
+        //to finish this code we need a randomizer for the prompts
         _prompt = _prompts[0];
         _date = DateTime.Now.ToShortDateString();
         Console.WriteLine(_prompt);
@@ -21,6 +24,11 @@ public class JournalEntry
 
     public void DisplayJournalEntry()
     {
-        Console.WriteLine($"{_date}, {_prompt}, {_response}");
+        Console.WriteLine($"{_date},{_prompt},{_response}");
+    }
+    
+    public string CreateFileSytemString()
+    {
+        return $"{_date}, {_prompt}, {_response}";
     }
 }
