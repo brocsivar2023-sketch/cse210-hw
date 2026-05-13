@@ -5,8 +5,8 @@ public class JournalEntry
     public string _response;
     public string[] _prompts =
     {
-        "How are you feeling today",
-        "Who did you talk with today",
+        "How are you feeling today?",
+        "Who did you talk with today?",
         "What is something you're grateful for?"
     };
 
@@ -16,6 +16,11 @@ public class JournalEntry
         _date = DateTime.Now.ToShortDateString();
         Console.WriteLine(_prompt);
         _response = Console.ReadLine();
-        
+
+    }
+
+    public void DisplayJournalEntry()
+    {
+        Console.WriteLine($"{_date}, {_prompt}, {_response}");
     }
 }
