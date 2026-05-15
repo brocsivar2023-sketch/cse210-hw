@@ -2,9 +2,7 @@ public class JournalEntry
 {
     public string _date;
     public string _prompt;
-    public string _response;
-    
-    //Need to create more prompts 
+    public string _response; 
     public string[] _prompts =
     {
         "Did you see the hand of the Lord in your life today? ",
@@ -16,7 +14,6 @@ public class JournalEntry
 
     public void CreateJournalEntry()
     {
-        //to finish this code we need a randomizer for the prompts
         _prompt = _prompts[Random.Shared.Next(_prompts.Count())];
         _date = DateTime.Now.ToShortDateString();
         Console.WriteLine(_prompt);
@@ -26,7 +23,7 @@ public class JournalEntry
 
     public void DisplayJournalEntry()
     {
-        Console.WriteLine($"Date: {_date}, Prompt:{_prompt} \n Response: {_response}");
+        Console.WriteLine($"Date: {_date}, Prompt: {_prompt} \n Response: {_response}");
     }
     
     public string CreateFileSytemString()
