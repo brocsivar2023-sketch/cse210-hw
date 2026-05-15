@@ -24,7 +24,7 @@ public class JournalEntry
 
     public void DisplayJournalEntry()
     {
-        Console.WriteLine($"{_date},{_prompt},{_response}");
+        Console.WriteLine($"{_date}, {_prompt}: {_response}");
     }
     
     public string CreateFileSytemString()
