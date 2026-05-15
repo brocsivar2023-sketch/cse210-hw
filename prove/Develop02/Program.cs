@@ -5,39 +5,41 @@ class Program
     static void Main(string[] args)
     {
         int menuItem = 0;
+        Journal journal = new Journal();
+
         do
         {
+            //Goes to menu class to display the instructions and title and to retrieve menu input
             Menu menu = new Menu();
             menu.DisplayTitle();
             menuItem = menu.ProcessMenu();
+
+
+            // Writes a new journal Entry
 
             if (menuItem == 1)
             {
                 JournalEntry journalEntry = new JournalEntry();
                 journalEntry.CreateJournalEntry();
-                // journalEntry.DisplayJournalEntry();
-                // Console.WriteLine(journalEntry.CreateFileSytemString());
-                JournalEntry journalEntry2 = new JournalEntry();
-                journalEntry2.CreateJournalEntry();
-
-
-                Journal journal = new Journal();
+                journalEntry.DisplayJournalEntry();
                 journal.AddJournalEntry(journalEntry);
-                journal.AddJournalEntry(journalEntry2);
-                journal.DisplayJournal();
             }
+            // Displays all of the journal entries in the journal
             else if (menuItem == 2)
             {
-                Console.WriteLine("#2");
+                journal.DisplayJournal();
             }
+            // Loads a different jounral from the file
             else if (menuItem == 3)
             {
                 Console.WriteLine("#3");
             }
+            // Saves your journal to a file
             else if (menuItem == 4)
             {
                 Console.WriteLine("#4");
             }
+            // Ends the program
             else if (menuItem == 5)
             {
                 Console.WriteLine("You ended the program");
