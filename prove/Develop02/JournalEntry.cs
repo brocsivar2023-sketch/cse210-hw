@@ -7,15 +7,17 @@ public class JournalEntry
     //Need to create more prompts 
     public string[] _prompts =
     {
-        "How are you feeling today?",
-        "Who did you talk with today?",
-        "What is something you're grateful for?"
+        "Did you see the hand of the Lord in your life today? ",
+        "What was something you enjoyed today?",
+        "What was something that frustrated you?",
+        "What where all of the different emotions that you felt today?",
+        "Did you get overlly stressed? Why? "
     };
 
     public void CreateJournalEntry()
     {
         //to finish this code we need a randomizer for the prompts
-        _prompt = _prompts[0];
+        _prompt = _prompts[Random.Shared.Next(_prompts.Count())];
         _date = DateTime.Now.ToShortDateString();
         Console.WriteLine(_prompt);
         _response = Console.ReadLine();
@@ -24,11 +26,11 @@ public class JournalEntry
 
     public void DisplayJournalEntry()
     {
-        Console.WriteLine($"{_date}, {_prompt}: {_response}");
+        Console.WriteLine($"Date: {_date}, Prompt:{_prompt} \n Response: {_response}");
     }
     
     public string CreateFileSytemString()
     {
-        return $"{_date}, {_prompt}, {_response}";
+        return $"{_date}%{_prompt}%{_response}";
     }
 }

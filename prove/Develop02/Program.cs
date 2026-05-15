@@ -1,4 +1,5 @@
 using System;
+using System.IO.Enumeration;
 
 class Program
 {
@@ -32,12 +33,16 @@ class Program
             // Loads a different jounral from the file
             else if (menuItem == 3)
             {
-                Console.WriteLine("#3");
+                Console.WriteLine("What is the file name? ");
+                string fileName = Console.ReadLine();
+                journal.ReadFromFile(fileName);
             }
             // Saves your journal to a file
             else if (menuItem == 4)
             {
-                Console.WriteLine("#4");
+                Console.WriteLine("What is the name of your file? ");
+                string _fileName = Console.ReadLine();
+                journal.WriteToFile(_fileName);
             }
             // Ends the program
             else if (menuItem == 5)
