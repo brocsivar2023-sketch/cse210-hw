@@ -1,5 +1,14 @@
 using System;
 using System.IO.Enumeration;
+/* 
+I fulfilled the basic requirements as well as the exceeding requirments section. I created 3 different classes and
+I made it so that each class uses all of its methods and that the classes go to each other to make it as simple as 
+possible. I exceeded requirements by adding a an extra item to the menu that lists all of the journal entries
+and shows their index and lets the user choose which journal entry to delete and deletes it. I also tried to 
+handle exceptions so program won't fail. 
+*/
+
+
 
 class Program
 {
