@@ -44,8 +44,13 @@ class Program
                 string _fileName = Console.ReadLine();
                 journal.WriteToFile(_fileName);
             }
-            // Ends the program
+            //Deletes a Journal Entry
             else if (menuItem == 5)
+            {
+                journal.DeleteAJournal();
+            }
+            // Ends the program
+            else if (menuItem == 6)
             {
                 Console.WriteLine("You ended the program");
             }
@@ -53,7 +58,7 @@ class Program
             {
                 Console.WriteLine("You entered in a wrong value or number try again. ");
             }
-        } while (menuItem != 5);
+        } while (menuItem != 6);
 
     }
 }
