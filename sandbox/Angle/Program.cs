@@ -7,5 +7,11 @@
         Angle myAngle = new Angle();
         myAngle.SetRadians(10);
         Console.WriteLine(myAngle.GetRadians());
+
+        Angle myAngle2 = new Angle();
+        myAngle2.SetRadians(10);
+        Console.WriteLine(myAngle.GetRadians());
+
+
     }
 }
