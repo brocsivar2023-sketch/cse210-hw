@@ -9,5 +9,11 @@ class Program
 
         myWord.Hide();
         Console.WriteLine(myWord.GetWordString());
+
+        myWord.DisplayWord();
+        if (myWord.IsHidden())
+        {
+            Console.WriteLine(myWord.GetWordString());
+        }
     }
 }
