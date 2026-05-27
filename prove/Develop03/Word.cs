@@ -10,7 +10,22 @@ class Word
     }
     public string GetWordString()
     {
-        // Not done need to give it back will give back underscores
-        return _word;
+        string tempWord = "";
+        if (_hidden)
+        {
+            foreach(char c in _word)
+            {
+                tempWord += '_';
+            }
+        }
+        else
+        {
+            tempWord = _word;
+        }
+        return tempWord;
+    }
+    public void Hide()
+    {
+        _hidden = true;
     }
 }
