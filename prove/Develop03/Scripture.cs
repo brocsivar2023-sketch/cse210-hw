@@ -1,3 +1,5 @@
+using System.Security.Cryptography.X509Certificates;
+
 class Scripture
 {
     private List<Word> _words;
@@ -37,8 +39,18 @@ class Scripture
     {
         for (int i = 0; i < 3; i++)
         {
-            int x = Random.Shared.Next(_words.Count);
-            _words[x].Hide();
+            bool y = true;
+            while (y == true)
+            {
+                Random random = new Random();
+                int x = random.Next(_words.Count);
+                if (_words[x].IsHidden() == false)
+                {
+                    _words[x].Hide();
+                    y = false;
+                }
+            }
+
         }
     }
 
@@ -50,6 +62,26 @@ class Scripture
             word.DisplayWord();
         }
         Console.WriteLine(' ');
+    }
+    public bool AllWordsHidden()
+    {
+        int words = 0;
+        foreach (Word word in _words)
+        {
+            if (word.IsHidden() == true)
+            {
+                words++;
+            }
+        }
+        if (words == _words.Count)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
     }
 
 
