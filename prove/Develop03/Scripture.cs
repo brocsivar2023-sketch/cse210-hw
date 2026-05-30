@@ -40,13 +40,17 @@ class Scripture
         for (int i = 0; i < 3; i++)
         {
             bool y = true;
-            while (y == true)
+            while (y)
             {
                 Random random = new Random();
                 int x = random.Next(_words.Count);
                 if (_words[x].IsHidden() == false)
                 {
                     _words[x].Hide();
+                    y = false;
+                }
+                else if (WordsShown() == 0)
+                {
                     y = false;
                 }
             }
@@ -63,25 +67,19 @@ class Scripture
         }
         Console.WriteLine(' ');
     }
-    public bool AllWordsHidden()
+    public int WordsShown()
     {
-        int words = 0;
+        int words = _words.Count;
         foreach (Word word in _words)
         {
             if (word.IsHidden() == true)
             {
-                words++;
-            }
-        }
-        if (words == _words.Count)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+                words--;
 
+            }
+
+        }
+        return words;
     }
 
 

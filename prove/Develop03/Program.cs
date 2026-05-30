@@ -12,12 +12,23 @@ class Program
         int endVerse = 5;
         string text = "1 Then came to Jesus scribes and Pharisees, which were of Jerusalem, saying, 2 Why do thy disciples transgress the tradition of the elders? for they wash not their hands when they eat bread. 3 But he answered and said unto them, Why do ye also transgress the commandment of God by your tradition? 4 For God commanded, saying, Honour thy father and mother: and, He that curseth father or mother, let him die the death. 5 But ye say, Whosoever shall say to his father or his mother, It is a gift, by whatsoever thou mightest be profited by me;";
         Scripture myScripture = new Scripture(book, chapter, startVerse, endVerse, text);
-        bool end = false;
-        while(end != false)
+        int end = 40000;
+        myScripture.ShowScripture();
+        Console.WriteLine("Welcome to the scripture memorizer program! Press enter to continue ");
+        Console.ReadLine();
+        Console.Clear();
+        while(end != 0)
         {
-            myScripture.ShowScripture();
             myScripture.HideSomeWords();
-            end = myScripture.AllWordsHidden();
+            myScripture.ShowScripture();
+            end = myScripture.WordsShown();
+            Console.WriteLine("Press enter to continue or 'quit' to finish ");
+            string userInput = Console.ReadLine();
+            if (userInput == "quit")
+            {
+                end = 0;
+            }
+            Console.Clear();
         }
     }
 }
