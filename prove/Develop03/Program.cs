@@ -1,7 +1,12 @@
 using System;
 using System.Collections.Concurrent;
 using System.Security.Cryptography.X509Certificates;
-
+/*
+I created 3 different classes that uses the text and reference for each of the scriptures and makes it so the person
+can memorize it. For my exceeding requirments I made it so multiple scriptures can be used so that each of the 
+text of the scriptures is only accesed through a dictionary. It handles situations if there is only one verse used or 
+more than 2 verses.
+*/
 class Program
 {
     static void Main(string[] args)
@@ -27,10 +32,12 @@ class Program
         int chapter = StringToInt(split[1]);
         int startVerse = StringToInt(split[2]);
         int endVerse = 0;
+
         if (split.Length == 4)
         {
             endVerse = StringToInt(split[3]);
         }
+
         string text = scriptureText[reference[x]];
         Scripture myScripture = new Scripture(book, chapter, startVerse, endVerse, text);
 
