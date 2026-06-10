@@ -7,5 +7,9 @@ class Program
     {
         BaseActivity myActivity = new BaseActivity("Breath", "THis will help you breath");
         myActivity.StartActivity();
+        myActivity.RunCountdown("Breath in", 10);
+
+        Breathing myBreathing = new Breathing("This will hlep you breath better");
+        myBreathing.RunActivity();
     }
 }

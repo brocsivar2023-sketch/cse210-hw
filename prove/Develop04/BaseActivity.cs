@@ -22,4 +22,16 @@ class BaseActivity
         Console.WriteLine("How many seconds for this activity? ");
         _duration = int.Parse(Console.ReadLine());
     }
+
+    public void RunCountdown(string message, int duration)
+    {
+        Console.Write($"{message}: ");
+        while(duration >= 0)
+        {
+            Console.Write($"{duration--,2}");
+            Thread.Sleep(1000);
+            Console.Write("\b\b");
+        }
+        Console.WriteLine("");
+    }
 }
