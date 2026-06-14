@@ -26,7 +26,7 @@ class BaseActivity
 
     public void StartActivity()
     {
-        Console.WriteLine($"Welcome to the {_name} activity");
+        Console.WriteLine($"Welcome to the {_name} Activity");
         Console.WriteLine(_description);
 
         Console.WriteLine("How long in seconds would you like this activity? ");
