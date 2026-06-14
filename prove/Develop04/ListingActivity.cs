@@ -14,10 +14,14 @@ class Listing : BaseActivity
         prompts.Add("Who are people that you have helped this week? ");
         prompts.Add("When have you felt the Holy Ghost this month? ");
         prompts.Add("Who are some of your personal heroes? ");
+
+        Console.Clear(); 
+        
         StartActivity();
         int duration = GetDuration();
         Console.WriteLine("Get Ready...");
         LoadingScreen();
+        Console.Clear();
         Console.WriteLine("List as many responses as you can to the following prompt: ");
         Console.WriteLine(prompts[Random.Shared.Next(prompts.Count)]);
         RunCountdown("You may begin in...", 5);

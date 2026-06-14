@@ -23,6 +23,8 @@ class Reflection : BaseActivity
         questions.Add("What did you learn about yourself through this experience? ");
         questions.Add("How can you keep this experience in mind in the future? ");
 
+        Console.Clear();
+
         StartActivity();
         Console.WriteLine("Get Ready...");
         LoadingScreen();
@@ -32,6 +34,7 @@ class Reflection : BaseActivity
         Console.ReadLine();
         Console.WriteLine("Now Ponder each of the following questions as they relate to this experience. ");
         RunCountdown("You may begin in...", 3);
+        Console.Clear();
         int duration = GetDuration();
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(duration);

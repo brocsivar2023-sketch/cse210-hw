@@ -18,16 +18,19 @@ class Menu
             {
                 Breathing myBreathing = new Breathing("This activity will help you with your breathing by walking you through how to breathe in and out slowly. Clear your mind and focus on your breathing. ");
                 myBreathing.RunActivity();
+                Console.Clear();
             }
             else if (var == 2)
             {
                 Reflection myReflection = new Reflection("This activity will help you reflect on times in your life when youi have shown stregnth and resilience. This will help you recognize these things in other aspects of your life. ");
                 myReflection.RunActivity();
+                Console.Clear();
             }
             else if (var == 3)
             {
                 Listing myListing = new Listing("This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
                 myListing.RunActivity();
+                Console.Clear();
             }
             else if (var == 4)
             {
@@ -35,7 +38,9 @@ class Menu
             }
             else
             {
-                Console.WriteLine("You did something wrong try again ");
+                Console.Clear();
+                Console.WriteLine("You did something wrong try again. Press Enter to Continue ");
+                Console.ReadLine();
             }
 
         }

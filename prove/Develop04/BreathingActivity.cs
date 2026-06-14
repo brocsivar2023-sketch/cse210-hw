@@ -8,6 +8,7 @@ class Breathing : BaseActivity
 
     public void RunActivity()
     {
+        Console.Clear();
         StartActivity();
         Console.WriteLine("Get ready...");
         LoadingScreen();
