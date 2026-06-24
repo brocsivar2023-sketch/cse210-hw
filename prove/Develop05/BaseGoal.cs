@@ -1,7 +1,7 @@
 using System.ComponentModel;
 using System.Dynamic;
 
-class BaseGoal
+abstract class BaseGoal
 {
     private string _name;
     private string _description;
@@ -17,19 +17,19 @@ class BaseGoal
         _goalType = "";
     }
 
-    public void SetName()
+    protected void SetName()
     {
         Console.WriteLine("What is the name of your goal? ");
         _name = Console.ReadLine();
     }
 
-    public void SetDescription()
+    protected void SetDescription()
     {
         Console.WriteLine($"Enter the descirption for {_name} goal: ");
         _description = Console.ReadLine();
     }
 
-    public void SetNumberOfPoints()
+    protected void SetNumberOfPoints()
     {
         Console.WriteLine($"Enter the number of points this is worth: ");
         _numberOfPoints = int.Parse(Console.ReadLine());
@@ -48,10 +48,14 @@ class BaseGoal
     MarkComplete will set the stateus to true, which means that it 
     retruns the number of points for comleteing the goal. 
     */
-    
-    public int MarkComplete()
+
+    protected int MarkComplete()
     {
         _status = true;
         return _numberOfPoints;
     }
+
+    public abstract void CreateGoal();
+
+    public abstract void RecordEvent();
 }
