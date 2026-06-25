@@ -103,20 +103,40 @@ class Goals
     }
     public void RecordEvent()
     {
+        int index = -1;
         DisplayGoals();
-
         Console.WriteLine("Enter the index of the goal that you completed: ");
 
-        int index = int.Parse(Console.ReadLine());
+        string stuff = Console.ReadLine();
+        if (int.TryParse(stuff, out int result))
+        {
+            index = int.Parse(stuff);
+        }
+        else
+        {
+            Console.WriteLine("You didn't enter in a number try agian. Press Enter to continue ");
+            Console.ReadLine();
+        }
+        if (_goals.Count() != 0 && index < _goals.Count() && index > 0)
+        {
+            BaseGoal goal = _goals[index-1];
 
-        BaseGoal goal = _goals[index-1];
-
-        int points = goal.RecordEvent();
-        _totalPoints += points;
-        Console.WriteLine($"You earned {points} points ");
-        Console.WriteLine($"Your total amount of points are {_totalPoints} points ");
-        Console.WriteLine("Press enter to continue ");
-        Console.ReadLine();
-
+            int points = goal.RecordEvent();
+            _totalPoints += points;
+            Console.WriteLine($"You earned {points} points ");
+            Console.WriteLine($"Your total amount of points are {_totalPoints} points ");
+            Console.WriteLine("Press enter to continue ");
+            Console.ReadLine();
+        }
+        else if (index > _goals.Count() || 1 > index)
+        {
+            Console.WriteLine("You didn't enter the correct index value. Press Enter to continue");
+            Console.ReadLine();
+        }
+        else
+        {
+            Console.WriteLine("There is nothing in the list. Press Enter to continue ");
+            Console.ReadLine();
+        }
     }
 }
