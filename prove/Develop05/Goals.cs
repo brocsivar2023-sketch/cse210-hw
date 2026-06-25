@@ -105,7 +105,7 @@ class Goals
     {
         DisplayGoals();
 
-        Console.WriteLine("Enter the index of the goal that you want to change: ");
+        Console.WriteLine("Enter the index of the goal that you completed: ");
 
         int index = int.Parse(Console.ReadLine());
 

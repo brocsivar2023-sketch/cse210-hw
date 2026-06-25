@@ -10,7 +10,18 @@ class Menu
         Console.WriteLine("  5. Record Event ");
         Console.WriteLine("  6. Quit ");
         Console.WriteLine("Select a choice from menu: ");
-        return int.Parse(Console.ReadLine());
+        string points = Console.ReadLine();
+        if (int.TryParse(points, out int result))
+        {
+            return int.Parse(points);
+        }
+        else
+        {
+            Console.WriteLine("You didn't enter in a number try agian. Press enter to continue ");
+            Console.ReadLine();
+        }
+
+        return 0;
     }
 
     public int DisplayGoalMenu()
@@ -20,6 +31,17 @@ class Menu
         Console.WriteLine("  2. Eternal Goals ");
         Console.WriteLine("  3. Checklist Goals ");
         Console.WriteLine("Which type of goal would you like to create? ");
-        return int.Parse(Console.ReadLine());
+        
+        string points = Console.ReadLine();
+        if (int.TryParse(points, out int result))
+        {
+            return int.Parse(points);
+        }
+        else
+        {
+            Console.WriteLine("You didn't enter in a number try agian. Press enter to continue ");
+            Console.ReadLine();
+        }
+        return 0;
     }
 }

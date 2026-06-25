@@ -49,7 +49,16 @@ abstract class BaseGoal
     protected void SetNumberOfPoints()
     {
         Console.WriteLine($"Enter the number of points this is worth: ");
-        _numberOfPoints = int.Parse(Console.ReadLine());
+        string points = Console.ReadLine();
+        if (int.TryParse(points, out int result))
+        {
+            _numberOfPoints = int.Parse(Console.ReadLine());
+        }
+        else
+        {
+            Console.WriteLine("You didn't enter in a number try agian. Press Enter to continue ");
+            Console.ReadLine();
+        }
     }
 
     public int GetPoints()

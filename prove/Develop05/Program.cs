@@ -1,6 +1,7 @@
 using System;
 using System.IO.Enumeration;
 using System.Net.Security;
+using System.Runtime.InteropServices;
 
 class Program
 {
@@ -16,6 +17,7 @@ class Program
             loopNum = menu.DisplayMenu();
             if (loopNum == 1)
             {
+                Console.Clear();
                 int goalNum = menu.DisplayGoalMenu();
                 if (goalNum == 1)
                 {
@@ -39,21 +41,25 @@ class Program
                 {
                     Console.WriteLine("You did something wrong. Try again ");
                 }
+                Console.Clear();
             }
             else if (loopNum == 2)
             {
+                Console.Clear();
                 myGoals.DisplayGoals();
                 Console.WriteLine("Press enter to continue ");
                 Console.ReadLine();
             }
             else if (loopNum == 3)
             {
+                Console.Clear();
                 Console.WriteLine("What would you like to name the file? ");
                 string filename = Console.ReadLine();
                 myGoals.SaveGoals(filename);
             }
             else if (loopNum == 4)
             {
+                Console.Clear();
                 Console.WriteLine("What is the file name? ");
                 string filename = Console.ReadLine();
                 myGoals.LoadGoals(filename);
@@ -61,17 +67,22 @@ class Program
             }
             else if (loopNum == 5)
             {
+                Console.Clear();
                 myGoals.RecordEvent();
 
             }
             else if (loopNum == 6)
             {
+                Console.Clear();
                 Console.WriteLine("You ended the program ");
+                Console.WriteLine("Press Enter to continue ");
+                Console.ReadLine();
             }
             else
             {
                 Console.WriteLine("You did something wrong. Try again ");
             }
+            Console.Clear();
         }
     }
 }

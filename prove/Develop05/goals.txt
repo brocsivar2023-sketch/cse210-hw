@@ -1,4 +1,5 @@
-6600
-Family%Go to the reunion%6000%True%Simple
+7000
+Family%Go to the reunion%6000%False%Simple
 church%go to chruch eahc week%400%False%Eternal%1
-Eat healthy%eat one healthy snack a day%200%False%Checklist%1%10000%10000
+Eat healthy%eat one healthy snack a day%200%False%Checklist%3%10000%10000
+Eat a elephant%Find a elephant and eat it all gone%400000%False%Simple

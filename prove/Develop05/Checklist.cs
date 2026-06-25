@@ -41,7 +41,7 @@ class Checklist : BaseGoal
         if (_numCompletions == _maxGoals)
         {
             MarkComplete();
-            
+
             return GetPoints() + _bonuspoints;
         }
         else
@@ -53,11 +53,29 @@ class Checklist : BaseGoal
     private void ObtainMaxGoal()
     {
         Console.WriteLine("In order to recieve bonus points, how many times do you need to complete the goal? ");
-        _maxGoals = int.Parse(Console.ReadLine());
+        string goals = Console.ReadLine();
+        if (int.TryParse(goals, out int result))
+        {
+            _maxGoals = int.Parse(Console.ReadLine());
+        }
+        else
+        {
+            Console.WriteLine("You didn't enter in a number try agian. Press Enter to continue ");
+            Console.ReadLine();
+        }
     }
     private void ObtainBonusPoints()
     {
         Console.WriteLine("If you complete it the max amount how many bonus points will you get? ");
-        _bonuspoints = int.Parse(Console.ReadLine());
+        string points = Console.ReadLine();
+        if (int.TryParse(points, out int result))
+        {
+            _bonuspoints = int.Parse(Console.ReadLine());
+        }
+        else
+        {
+            Console.WriteLine("You didn't enter in a number try agian. Press Enter to continue ");
+            Console.ReadLine();
+        }
     }
 }
