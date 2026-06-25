@@ -1,0 +1,2 @@
+temple%go to the temple each week%350%False%Simple
+Go to chruch each sunday%enjoy your time at cheuch each sunday%400%False%Eternal%0

@@ -1,4 +1,5 @@
 using System;
+using System.IO.Enumeration;
 using System.Net.Security;
 
 class Program
@@ -19,6 +20,8 @@ class Program
         myGoal.RecordEvent();
         Console.WriteLine(myGoal.GetDisplayString()); */
 
+        Goals mygoals = new Goals();
+
         int loopNum = 0;
         while (loopNum != 6)
         {
@@ -29,11 +32,16 @@ class Program
                 int goalNum = menu.DisplayGoalMenu();
                 if (goalNum == 1)
                 {
-                    
+                    SimpleGoal simple = new SimpleGoal();
+                    simple.CreateGoal();
+                    mygoals.AddGoal(simple);
+
                 }
                 else if (goalNum == 2)
                 {
-                    
+                    Eternal eternal = new Eternal();
+                    eternal.CreateGoal();
+                    mygoals.AddGoal(eternal);
                 }
                 else if (goalNum == 3)
                 {
@@ -46,14 +54,21 @@ class Program
             }
             else if (loopNum == 2)
             {
-                
+                mygoals.DisplayGoals();
+                Console.WriteLine("Press enter to continue ");
+                Console.ReadLine();
             }
             else if (loopNum == 3)
             {
-                
+                Console.WriteLine("What would you like to name the file? ");
+                string filename = Console.ReadLine();
+                mygoals.SaveGoals(filename);
             }
             else if (loopNum == 4)
             {
+                Console.WriteLine("What is the file name? ");
+                string filename = Console.ReadLine();
+                mygoals.LoadGoals(filename);
                 
             }
             else if (loopNum == 5)

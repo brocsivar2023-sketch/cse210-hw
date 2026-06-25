@@ -6,9 +6,14 @@ class SimpleGoal : BaseGoal
     {
         
     }
+    public SimpleGoal(string name, string descritpion, int points, bool status, string goaltype): base(name, descritpion, points, status, goaltype)
+    {
+        
+    }
 
     public override void CreateGoal()
     {
+        SetGoalType("Simple");
         SetName();
         SetDescription();
         SetNumberOfPoints();

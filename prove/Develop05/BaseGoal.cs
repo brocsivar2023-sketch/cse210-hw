@@ -16,6 +16,18 @@ abstract class BaseGoal
         _status = false;
         _goalType = "";
     }
+    public BaseGoal(string name, string descritpion, int points, bool status, string goaltype)
+    {
+        _name = name;
+        _description = descritpion;
+        _numberOfPoints = points;
+        _status = status;
+        _goalType = goaltype;
+    }
+    public void SetGoalType(string name)
+    {
+        _goalType = name;
+    }
 
     protected void SetName()
     {
@@ -53,6 +65,10 @@ abstract class BaseGoal
     {
         _status = true;
         return _numberOfPoints;
+    }
+    public virtual string CreateFileSytemString()
+    {
+        return $"{_name}%{_description}%{_numberOfPoints}%{_status}%{_goalType}";
     }
 
     public abstract void CreateGoal();
