@@ -8,7 +8,8 @@ class Menu
         Console.WriteLine("  3. Save Goals ");
         Console.WriteLine("  4. Load Goals ");
         Console.WriteLine("  5. Record Event ");
-        Console.WriteLine("  6. Quit ");
+        Console.WriteLine("  6. What animal are you ");
+        Console.WriteLine("  7. Quit ");
         Console.WriteLine("Select a choice from menu: ");
         string points = Console.ReadLine();
         if (int.TryParse(points, out int result))

@@ -10,7 +10,7 @@ class Program
         Goals myGoals = new Goals();
 
         int loopNum = 0;
-        while (loopNum != 6)
+        while (loopNum != 7)
         {
             Console.WriteLine($"Your total amount of points are {myGoals.GetPoints()} points ");
             Menu menu = new Menu();
@@ -71,12 +71,17 @@ class Program
                 myGoals.RecordEvent();
 
             }
-            else if (loopNum == 6)
+            else if (loopNum == 7)
             {
                 Console.Clear();
                 Console.WriteLine("You ended the program ");
                 Console.WriteLine("Press Enter to continue ");
                 Console.ReadLine();
+            }
+            else if(loopNum == 6) 
+            {
+                Game game = new Game();
+                game.PlayGame(myGoals);
             }
             else
             {
