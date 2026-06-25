@@ -3,6 +3,13 @@ using System.IO.Enumeration;
 using System.Net.Security;
 using System.Runtime.InteropServices;
 
+/* 
+In this program I completed all of the objectives and I made sure that the program
+functions correctly. For my Exceeding exceptations I created a level up procedure that
+each time the user reaches 1000 points they level up to a different animal in the 
+animal kingdom. If they want to see which animal they are currently they just have to 
+look at option number 6 in the menu. 
+*/
 class Program
 {
     static void Main(string[] args)
