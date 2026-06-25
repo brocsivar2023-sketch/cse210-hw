@@ -6,13 +6,12 @@ class Program
 {
     static void Main(string[] args)
     {
-        Goals mygoals = new Goals();
-        int totalPoints = 0;
+        Goals myGoals = new Goals();
 
         int loopNum = 0;
         while (loopNum != 6)
         {
-            Console.WriteLine($"Your total amount of points are {totalPoints} points ");
+            Console.WriteLine($"Your total amount of points are {myGoals.GetPoints()} points ");
             Menu menu = new Menu();
             loopNum = menu.DisplayMenu();
             if (loopNum == 1)
@@ -22,19 +21,19 @@ class Program
                 {
                     SimpleGoal simple = new SimpleGoal();
                     simple.CreateGoal();
-                    mygoals.AddGoal(simple);
+                    myGoals.AddGoal(simple);
                 }
                 else if (goalNum == 2)
                 {
                     Eternal eternal = new Eternal();
                     eternal.CreateGoal();
-                    mygoals.AddGoal(eternal);
+                    myGoals.AddGoal(eternal);
                 }
                 else if (goalNum == 3)
                 {
                     Checklist checklist = new Checklist();
                     checklist.CreateGoal();
-                    mygoals.AddGoal(checklist);
+                    myGoals.AddGoal(checklist);
                 }
                 else
                 {
@@ -43,7 +42,7 @@ class Program
             }
             else if (loopNum == 2)
             {
-                mygoals.DisplayGoals();
+                myGoals.DisplayGoals();
                 Console.WriteLine("Press enter to continue ");
                 Console.ReadLine();
             }
@@ -51,21 +50,18 @@ class Program
             {
                 Console.WriteLine("What would you like to name the file? ");
                 string filename = Console.ReadLine();
-                mygoals.SaveGoals(filename);
+                myGoals.SaveGoals(filename);
             }
             else if (loopNum == 4)
             {
                 Console.WriteLine("What is the file name? ");
                 string filename = Console.ReadLine();
-                mygoals.LoadGoals(filename);
+                myGoals.LoadGoals(filename);
                 
             }
             else if (loopNum == 5)
             {
-                int points = mygoals.RecordEvent();
-                Console.WriteLine($"You earned {points} points ");
-                totalPoints += points;
-                Console.WriteLine($"Your total amount of points are {totalPoints} points ");
+                myGoals.RecordEvent();
 
             }
             else if (loopNum == 6)

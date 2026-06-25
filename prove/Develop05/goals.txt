@@ -1,3 +1,4 @@
-temple%go to the temple each week%350%True%Simple
-Go to chruch each sunday%enjoy your time at cheuch each sunday%400%False%Eternal%2
-eat healthy%eat one healthy thing for 20 days%20%True%Checklist%20%20%400
+6600
+Family%Go to the reunion%6000%True%Simple
+church%go to chruch eahc week%400%False%Eternal%1
+Eat healthy%eat one healthy snack a day%200%False%Checklist%1%10000%10000

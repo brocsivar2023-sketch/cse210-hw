@@ -4,10 +4,16 @@ using System.Globalization;
 class Goals
 {
     private List<BaseGoal> _goals;
+    private int _totalPoints;
 
     public Goals()
     {
+        _totalPoints = 0;
         _goals = new List<BaseGoal>();
+    }
+    public int GetPoints()
+    {
+        return _totalPoints;
     }
 
     public void AddGoal(BaseGoal goal)
@@ -19,9 +25,11 @@ class Goals
     {
         try
         {
-            string[] lines = System.IO.File.ReadAllLines(fileName);
+            string numberStr = System.IO.File.ReadLines(fileName).FirstOrDefault();
+            _totalPoints += int.Parse(numberStr);
 
-            foreach (string line in lines)
+            string[] lines = System.IO.File.ReadAllLines(fileName);
+            foreach (string line in lines.Skip(1))
             {
                 string[] parts = line.Split("%");
                 string name = parts[0];
@@ -72,6 +80,7 @@ class Goals
         {
             using (StreamWriter outputFile = new StreamWriter(fileName))
             {
+                outputFile.WriteLine(_totalPoints);
                 foreach(BaseGoal goal in _goals)
                 {
                     outputFile.WriteLine(goal.CreateFileSytemString());
@@ -92,12 +101,22 @@ class Goals
             Console.WriteLine($"{num}. {goal.GetDisplayString()}");
         }
     }
-    public int RecordEvent()
+    public void RecordEvent()
     {
         DisplayGoals();
+
         Console.WriteLine("Enter the index of the goal that you want to change: ");
+
         int index = int.Parse(Console.ReadLine());
+
         BaseGoal goal = _goals[index-1];
-        return goal.RecordEvent();
+
+        int points = goal.RecordEvent();
+        _totalPoints += points;
+        Console.WriteLine($"You earned {points} points ");
+        Console.WriteLine($"Your total amount of points are {_totalPoints} points ");
+        Console.WriteLine("Press enter to continue ");
+        Console.ReadLine();
+
     }
 }
