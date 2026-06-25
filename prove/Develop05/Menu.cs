@@ -2,8 +2,6 @@ class Menu
 {
     public int DisplayMenu()
     {
-        //Put in number of points that the person has
-        Console.WriteLine();
         Console.WriteLine("Menu Options: ");
         Console.WriteLine("  1. Create a new Goal ");
         Console.WriteLine("  2. List Goals ");

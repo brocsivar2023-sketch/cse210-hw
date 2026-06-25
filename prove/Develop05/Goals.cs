@@ -1,3 +1,4 @@
+using System.Drawing;
 using System.Globalization;
 
 class Goals
@@ -91,8 +92,12 @@ class Goals
             Console.WriteLine($"{num}. {goal.GetDisplayString()}");
         }
     }
-    public void RecordEvent(BaseGoal goal)
+    public int RecordEvent()
     {
-        goal.RecordEvent();
+        DisplayGoals();
+        Console.WriteLine("Enter the index of the goal that you want to change: ");
+        int index = int.Parse(Console.ReadLine());
+        BaseGoal goal = _goals[index-1];
+        return goal.RecordEvent();
     }
 }

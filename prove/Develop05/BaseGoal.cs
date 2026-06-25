@@ -29,6 +29,11 @@ abstract class BaseGoal
         _goalType = name;
     }
 
+    public string GetGoalType()
+    {
+        return _goalType;
+    }
+
     protected void SetName()
     {
         Console.WriteLine("What is the name of your goal? ");
@@ -45,6 +50,11 @@ abstract class BaseGoal
     {
         Console.WriteLine($"Enter the number of points this is worth: ");
         _numberOfPoints = int.Parse(Console.ReadLine());
+    }
+
+    public int GetPoints()
+    {
+        return _numberOfPoints;
     }
     public virtual string GetDisplayString()
     {
@@ -73,5 +83,5 @@ abstract class BaseGoal
 
     public abstract void CreateGoal();
 
-    public abstract void RecordEvent();
+    public abstract int RecordEvent();
 }

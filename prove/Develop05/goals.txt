@@ -1,3 +1,3 @@
-temple%go to the temple each week%350%False%Simple
-Go to chruch each sunday%enjoy your time at cheuch each sunday%400%False%Eternal%0
-eat healthy%eat one healthy thing for 20 days%20%False%Checklist%0%20%400
+temple%go to the temple each week%350%True%Simple
+Go to chruch each sunday%enjoy your time at cheuch each sunday%400%False%Eternal%2
+eat healthy%eat one healthy thing for 20 days%20%True%Checklist%20%20%400

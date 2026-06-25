@@ -27,9 +27,9 @@ class Eternal : BaseGoal
         SetDescription();
         SetNumberOfPoints();
     }
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
         _numCompletions ++;
-        MarkComplete();
+        return GetPoints();
     }
 }

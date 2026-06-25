@@ -35,10 +35,19 @@ class Checklist : BaseGoal
         ObtainMaxGoal();
         ObtainBonusPoints();
     }
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
         _numCompletions ++;
-        MarkComplete();
+        if (_numCompletions == _maxGoals)
+        {
+            MarkComplete();
+            
+            return GetPoints() + _bonuspoints;
+        }
+        else
+        {
+            return GetPoints();
+        }
     }
 
     private void ObtainMaxGoal()

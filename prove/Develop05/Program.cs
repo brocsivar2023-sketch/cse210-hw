@@ -6,26 +6,13 @@ class Program
 {
     static void Main(string[] args)
     {
-       /* BaseGoal myBase = new BaseGoal();
-        myBase.SetName();
-        myBase.SetDescription();
-        myBase.SetNumberOfPoints();
-        Console.WriteLine(myBase.GetDisplayString());
-        myBase.MarkComplete();
-        Console.WriteLine(myBase.GetDisplayString());
-        */
-       /* SimpleGoal myGoal = new SimpleGoal();
-        myGoal.CreateGoal();
-        Console.WriteLine(myGoal.GetDisplayString());
-        myGoal.RecordEvent();
-        Console.WriteLine(myGoal.GetDisplayString()); */
-
         Goals mygoals = new Goals();
         int totalPoints = 0;
 
         int loopNum = 0;
         while (loopNum != 6)
         {
+            Console.WriteLine($"Your total amount of points are {totalPoints} points ");
             Menu menu = new Menu();
             loopNum = menu.DisplayMenu();
             if (loopNum == 1)
@@ -75,7 +62,11 @@ class Program
             }
             else if (loopNum == 5)
             {
-                
+                int points = mygoals.RecordEvent();
+                Console.WriteLine($"You earned {points} points ");
+                totalPoints += points;
+                Console.WriteLine($"Your total amount of points are {totalPoints} points ");
+
             }
             else if (loopNum == 6)
             {
