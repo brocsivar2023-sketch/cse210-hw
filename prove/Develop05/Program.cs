@@ -21,6 +21,7 @@ class Program
         Console.WriteLine(myGoal.GetDisplayString()); */
 
         Goals mygoals = new Goals();
+        int totalPoints = 0;
 
         int loopNum = 0;
         while (loopNum != 6)
@@ -35,7 +36,6 @@ class Program
                     SimpleGoal simple = new SimpleGoal();
                     simple.CreateGoal();
                     mygoals.AddGoal(simple);
-
                 }
                 else if (goalNum == 2)
                 {
@@ -45,7 +45,9 @@ class Program
                 }
                 else if (goalNum == 3)
                 {
-                    
+                    Checklist checklist = new Checklist();
+                    checklist.CreateGoal();
+                    mygoals.AddGoal(checklist);
                 }
                 else
                 {

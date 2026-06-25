@@ -41,12 +41,16 @@ class Goals
                 else if (goalType == "Eternal")
                 {
                     int numCompletions = int.Parse(parts[5]);
-                    Eternal eternal = new Eternal(name, description, numberOfPoints, status, goalType);
+                    Eternal eternal = new Eternal(name, description, numberOfPoints, status, goalType, numCompletions);
                     AddGoal(eternal);
                 }
                 else if (goalType == "Checklist")
                 {
-                    //complete later
+                    int numCompletions = int.Parse(parts[5]);
+                    int maxTimes = int.Parse(parts[6]);
+                    int bonuspoints = int.Parse(parts[7]);
+                    Checklist eternal = new Checklist(name, description, numberOfPoints, status, goalType, numCompletions, maxTimes, bonuspoints);
+                    AddGoal(eternal);
                 }
                 else
                 {

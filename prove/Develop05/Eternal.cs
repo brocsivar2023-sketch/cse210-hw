@@ -7,9 +7,9 @@ class Eternal : BaseGoal
         _numCompletions = 0;
     }
 
-    public Eternal(string name, string descritpion, int points, bool status, string goaltype): base(name, descritpion, points, status, goaltype)
+    public Eternal(string name, string descritpion, int points, bool status, string goaltype, int completions): base(name, descritpion, points, status, goaltype)
     {
-        _numCompletions = 0;
+        _numCompletions = completions;
     }
 
     public override string GetDisplayString()
