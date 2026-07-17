@@ -1,14 +1,14 @@
 class Receptions : Events
 {
-    private int _numRsvp;
+    private string _email;
 
     public Receptions() : base ()
     {
-        _numRsvp = 0;
+        _email = "";
     }
-    public Receptions(string eventTitle, string description, string date, string time, int numRsvp) : base(eventTitle, description, date, time)
+    public Receptions(string eventTitle, string description, string date, string time, string email) : base(eventTitle, description, date, time)
     {
-        _numRsvp = numRsvp;
+        _email = email;
     }
 
     public override string ShortDetails()
@@ -17,6 +17,6 @@ class Receptions : Events
     }
     public override string FullDetails()
     {
-        return StandardDetails() + $", Reservations: {_numRsvp}";
+        return "Event type: Receptions, " + StandardDetails() + $", Email to RSVP: {_email}";
     }
 }

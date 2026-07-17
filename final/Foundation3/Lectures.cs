@@ -21,6 +21,6 @@ class Lectures : Events
     }
     public override string FullDetails()
     {
-        return StandardDetails() + $", Speaker: {_speaker}, Capacity: {_capacity} persons";
+        return "Event type: Lectures, " + StandardDetails() + $", Speaker: {_speaker}, Capacity: {_capacity} persons";
     }
 }
