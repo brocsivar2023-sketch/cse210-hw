@@ -6,7 +6,7 @@ class Cycling : Activity
     {
         _speed = 1;
     }
-    public Cycling(string date, int length, int speed): base(date, length, "Cycling")
+    public Cycling(string date, int length, double speed): base(date, length, "Cycling")
     {
         _speed = speed;
     }
