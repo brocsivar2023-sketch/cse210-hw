@@ -9,7 +9,7 @@ class Running : Activity
         _distance = 1;
     }
 
-    public Running(string date, int length, int distance): base(date, length, "Running")
+    public Running(string date, int length, double distance): base(date, length, "Running")
     {
         _distance = distance;
     }
