@@ -1,4 +1,4 @@
-class Events
+abstract class Events
 {
     private string _eventTitle;
     private string _description;
@@ -33,7 +33,7 @@ class Events
 
     public string StandardDetails()
     {
-        return $"Event: {_eventTitle}, Description: {_description}, Date: {_date}, Time: {_time}, Address: {AddressString()}";
+        return $"Event: {_eventTitle}, Description: {_description}, Date: {_date}, Time: {_time}, Address: {AddressString()} ";
     }
 
     public virtual string ShortDetails()
@@ -41,4 +41,5 @@ class Events
         return $"Title: {_eventTitle}, Date: {_date}";
 
     }
+    public abstract string FullDetails();
 }
